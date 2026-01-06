@@ -48,3 +48,5 @@
 - this a complex work flow
 
 - now discuss point-by-point note that if we go to solve this problem using langchain then what diff kind of problem we will be facing;;
+
+27:
