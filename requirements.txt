@@ -1,0 +1,55 @@
+# LangChain Core
+langchain
+langchain-core
+
+# OpenAi Integration
+langchain-openai
+openai
+
+# Anthropic Integration
+langchain-anthropic 
+
+# Google Gemini (PaLM) Integration
+langchain-google-genai
+google.generativeai
+
+# Hugging Face Integration
+langchain-huggingface
+transformers
+huggingface-hub
+
+# Enviroment Variable Management
+python-dotenv
+
+# Machine learning Utilites
+numpy 
+scikit-learn 
+
+# for Data validation
+pydantic
+pydantic[email]
+
+grandalf
+
+
+# for document reader
+langchain-community
+sentence-transformers
+faiss-cpu
+langchain-cli
+
+# pip install "langchain==0.1.17"
+# pip install "langchain-community==0.0.36"
+# pip install "langchain-text-splitters==0.0.1"
+
+
+# for rag document loader
+# pip install -U langchain-community  
+
+pypdf
+
+# for WebBaseLoader you should have 
+bs4
+
+## for vector store db
+chromadb
