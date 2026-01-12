@@ -3,6 +3,6 @@
 -> see basic code how to write in langGraph
 -> so after that we can build any kind of sequencial workflow
 
-* now first we have to install the langGraph
+- now first we have to install the langGraph
 
-5:00min
+## we will use jupyter notebook --> bz by using jupyter notebook we can draw the graph of langGraph
