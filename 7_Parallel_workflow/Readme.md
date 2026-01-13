@@ -36,3 +36,39 @@
 * basically we will send partial state not whole
 
 * so rather than sending state we will send a dict with that attributes those have been changed
+
+
+## in sequencial worflow we were returning the whole state but here we are partially returning the state which one is good
+
+* now that one way which works in both of the condition (seq and parallel) is that you should use partial state returning instead whole state returning
+
+* you should return whole state if you are working on sequencial workflow 
+
+## sir recommendate -> do partial returning
+
+## now try to build a real world parallel workflow
+
+## 2. Parallel LLM-workflow;; 
+
+* you remember -> upse eassy -> evaluation;; so this in that workflow we first generate a topic on which asprient as to write eassy then we will take written eassy from aspirent and llm will evaluate that according to the topic and give some score
+
+* but here there is somethings diff workflow
+* first we will have essay_text so by using it we will start
+* and after that we will evaluate it with multiple evaluation criteria or multiple aspect
+
+1. COT (clearity of thought)
+2. DOA (Depath of analysis)
+3. language
+
+* these evaluation will be done on the basis of llm
+* we will send this essay to diff llm and tell them on which basis they have to evaluate this
+
+* these three llm will tell us two things about this essay
+1. Text feedback (how is the essay)
+2. and they will give you the score between 0-10
+
+* and these two things according to each node will go to final evaluation node ;; at final evaluation node we have to build a summarized feedback (merging the feedbacks, those coming from those three node) -> and this will be happend by llm ;; and for score -> it will calculate the averge of those returning score -> and tell us a final score;; and this will be our output 
+
+* so **State** would be 
+* {'text':text, cot_fedback, cot_score, doa_fedback, doa_score, language_feedback, language_score, summary_feedback, summary_score}
+
