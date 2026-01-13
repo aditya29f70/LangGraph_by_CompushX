@@ -72,3 +72,5 @@
 * so **State** would be 
 * {'text':text, cot_fedback, cot_score, doa_fedback, doa_score, language_feedback, language_score, summary_feedback, summary_score}
 
+27:00
+
