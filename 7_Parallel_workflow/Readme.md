@@ -72,5 +72,16 @@
 * so **State** would be 
 * {'text':text, cot_fedback, cot_score, doa_fedback, doa_score, language_feedback, language_score, summary_feedback, summary_score}
 
-27:00
+* what things which we should see that 
+* 1. this is parallel workflow
+* 2. llm workflow bz nodes are using llm
+* 3. and we must want to outcome in structure format from llm (text and score) ;; need structured output (give validation)
+
+* 4. need to use **Reducer fn** (how? so for that we should first thing , what would be our **state**)
+
+* state-> {'essay_text', 'cot_feedback', 'doa_feedback', 'language_feedback', 'final_feedback', 'individual_score'(would be list, here we will use reducer fn), 'final/avg_score'}
+
+* why we need reducer bz at that time we will be calculating those three cal_values parallely at a same time and want that reducer to store those -> be have to perform **merging** so need to use reducer 
+
+
 
