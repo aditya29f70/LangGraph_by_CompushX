@@ -85,3 +85,6 @@
 
 
 
+## for reducer we have to take help of **operator** so import it first (it is python module);; it has function equivalance of diff kind of operators
+
+* so use operator.add if you want to do merging every time by reducer
