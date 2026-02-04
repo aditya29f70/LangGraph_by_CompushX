@@ -20,4 +20,16 @@
 
 * roots= (-b+ (d)^1/2)/2a and (-b-(d)^1/2)/2a
 
-7:30
+
+## LLM based Review handling workflow
+
+* here we will be gotten review from our customer and we have to reply for that review
+
+* start -> find_sentiment -> conditions (choose; run_diagnosis, positive response) if (run_dia) -> negative_response -> end // and if (positive_res) -> End
+
+* in run_diagnosis we will try to understand or extract these things from our review -> issue_type, tone of customer, urgency -> this response would be json formate or we want structure output 
+
+* and in basis of these three things we wil try to build response from llm
+
+
+
