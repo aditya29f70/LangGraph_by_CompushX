@@ -12,3 +12,4 @@
 
 ## now time to implement in code
 
+* after doing that we will try to main the history so we can see all intermediate tweet and it's feedback
