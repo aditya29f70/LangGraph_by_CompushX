@@ -54,6 +54,20 @@ graph= builder.compile(checkpointer=checkpointer)
 config1= {'configurable':{'thread_id':1}}
 
 
+# stream= graph.stream({'messages':[HumanMessage(content='hi')]}, stream_mode='messages', config=config1)
+#     # diff kinds of stream_mode we have like messages, values, custom etc ; we will use rest of stream mode when work with agentic ai workflow
+
+# # stream is a generator 
+
+# print(f"Type of stream; {type(stream)}")
+
+# # now with help of this generator we have to process output token by token ;; by using loop 
+
+# for message_chunk, metadata in stream:
+#     if message_chunk.content:
+#         print(message_chunk.content,end=' ', flush=True)
+
+
 
 
 

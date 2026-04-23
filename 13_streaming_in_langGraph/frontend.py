@@ -20,8 +20,20 @@ if user_input:
     with st.chat_message('user'):
         st.text(user_input)
 
-    ai_response= graph.invoke({'messages':[HumanMessage(content=user_input)]}, config=config1)['messages'][-1].content
+    # ai_response= graph.invoke({'messages':[HumanMessage(content=user_input)]}, config=config1)['messages'][-1].content
 
-    st.session_state['message_history'].append({'role':"assistant", 'content': ai_response})
+    stream= graph.stream({'messages':[HumanMessage(content=user_input)]}, stream_mode='messages', config=config1) 
+    # stream= generator
+
+    # go to streamlit document you will see it has a build in function write_stream and where we only need to give our generator
+
     with st.chat_message('assistant'):
-        st.text(ai_response)
+        ai_message= st.write_stream(message_chunk.content for message_chunk, metadata in stream)
+        # we also store response in a variable so once it has been done to write it 
+
+        st.session_state['message_history'].append({'role':"assistant", 'content':ai_message})
+
+
+    # st.session_state['message_history'].append({'role':"assistant", 'content': ai_response})
+    # with st.chat_message('assistant'):
+    #     st.text(ai_response)
