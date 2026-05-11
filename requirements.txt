@@ -56,3 +56,5 @@ bs4
 
 ## for vector store db
 chromadb
+
+streamlit
