@@ -15,4 +15,10 @@
 5. you can cancel midway saving tokens
 6. you can interleave UI updates , e.g. show "Thinking..." show tool result
 
-12:00
+## so before for calling graph we use invoke function now for streaming we make change only there to change invoke to **stream**
+
+- and after stream it will give generator
+
+-> in python, a generator is a special type of iterator that allows you to generate values on the fly, one at a time, using the yield keyword instead of return
+
+- and since we are getting generator we can easly use loop and print its content (one taken at a time)
