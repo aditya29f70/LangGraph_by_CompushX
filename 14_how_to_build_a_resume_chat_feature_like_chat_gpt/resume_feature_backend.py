@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 from langgraph.graph import StateGraph, START, END, add_messages
 from typing import TypedDict, Annotated
 from langchain_core.messages import HumanMessage, BaseMessage, SystemMessage, AIMessage
@@ -7,10 +8,14 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langgraph.checkpoint.memory import InMemorySaver
 
+load_dotenv()
+
 
 llm= HuggingFaceEndpoint(
-    repo_id="mistralai/Mistral-7B-Instruct-v0.2",
+    repo_id="meta-llama/Meta-Llama-3.1-8B-Instruct",
     task='chat-completions',
+    temperature=0.7,
+    repetition_penalty=1.2,
     huggingfacehub_api_token= os.getenv("HUGGINGFACEHUB_API_TOKEN")
 )
 
