@@ -1,5 +1,5 @@
 import streamlit as st
-from resume_feature_backend import config1, graph
+from sqlite_backend import graph, retrieve_all_thread_ids, checkpointer
 from langchain_core.messages import HumanMessage, AIMessage
 import uuid
 
@@ -74,7 +74,7 @@ if "message_history" not in st.session_state:
 
 if 'thread_id' not in st.session_state:
     st.session_state['thread_id']= generate_thread_id()
-    st.session_state['thread_history']= [st.session_state['thread_id']]
+    st.session_state['thread_history']= retrieve_all_thread_ids(checkpointer)+ [st.session_state['thread_id']]
 
 
 # ******************** Sidebar UI **************************************

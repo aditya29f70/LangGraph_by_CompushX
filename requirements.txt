@@ -58,3 +58,5 @@ bs4
 chromadb
 
 streamlit
+
+langgraph-checkpoint-sqlite
