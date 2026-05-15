@@ -64,3 +64,30 @@
 - if we already have given all the langSmith information in .env and load in the project file then langSmith automatically trace that project
 
 ## since we want to run second project with different project name so for that we can use os , environ and change LANGCHAIN_PROJECT name
+
+# Now try to now how to trace a Rag model
+
+- before that we should know why it is **best to add langsmith to a rag base application**
+
+* Rag apps have two big failure modes:
+
+1. **Retrieverr errors** -> wrong/irrelevent docs retrieved. ; 2. Generator errors - model hallucinates or misuses context.
+
+- in production, it's often unclear where the failure happened. Was the retriever bad, or did the LLM ignore the docs?
+
+- LangSmith automatically records:
+- - user query
+- - Retrieverd documents
+- - LLM prompt (with inserted docs)
+- - LLM response
+
+* 1. rag
+* 1. problem is that langsmith is tracing all the checkpointer in the chain like parallel processing(retriever, runnableLambda, runnablePassthrough) prompt , llm but is not traceing steps like PyPdfloading, splliter, embedding works in vectors database
+
+* bz this is being happened bz by default langSmith only trace runnables (all invoke places)
+
+* so first problem is **our entire rag application is not being traced**. Ideal whole process would be traced
+
+* **To solve this** -> 3_rag_v2 ;; so for that we use langSmith traceable decorator
+
+* 2. Problem2 ; it is logical problem in that rag application that -> epoch time when we run that application it will take same high time ; bz each time we start from start ; loading, chunking , embedding etc ;; idealy that part should not be ron again loading, chunking and embedding after it is done to make vectorstore
