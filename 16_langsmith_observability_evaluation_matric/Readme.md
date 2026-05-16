@@ -120,3 +120,20 @@
 - If a workflow branches (conditional/parallel/subgraph), LangSmith captures which path was executed.
 
 * eg . 5_langgraph.py "Easy evaluatork"
+
+## till now what ever we have learnt about langSmith is about a single perspective -> **obserbability** how to trace a ai application end-to-end
+
+# Other features of langSmith (vvimpt) ; these all things comes under LLMOps
+
+- **Monitoring and alerting**
+  What it does:
+- - Monitoring in LangSmith looks across **many traces at once** to track the overall health of your LLM system. It aggregates key metrics like **latency** (P50, P95, P99), token usage, cost, error rates and success rates. You can set up **alert** to notify you when these metrics drift outside acceptable ranges( eg, a spike in latency, highter error rates, or unexpected cost growth).
+
+- Why it matters:
+- - In production, issues often appears first as **patterns across multiple runs** rather than in single trace. Monitoring helps you catch these early signs before they impact users at scale. Instead of waiting for customer complaints, you're proactively alerted when performance degrades or costs spike, enabling faster response and more reliable applications.
+
+* **Evaluation**
+* - Note; llms kind of non-deterministic nature (same input can give you different outputs);; create problems
+
+* What it does;
+  Evaluation in LangSmith helps you **systematically measure the quality of your llm**. You can run tests against **gold-standard datasets** or apply **custom evaluation metrics** such as faithfulness, relevance, or completeness, LangSmith support multiple appoches: automated scoring with **LLM-as-a-judge, sematic similarity checks**, or even **custom python evaluation**. Evaluation can be run both **ofline** (batch test before deployment) and \*\*online (continuous checks on live traffic)
