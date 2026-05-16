@@ -89,5 +89,23 @@
 * so first problem is **our entire rag application is not being traced**. Ideal whole process would be traced
 
 * **To solve this** -> 3_rag_v2 ;; so for that we use langSmith traceable decorator
+* but still it behave like it traceing seperate **setup ragpipeline** and **rag-query** part but both are parts of a rag application; so these both would be inside on trace
 
 * 2. Problem2 ; it is logical problem in that rag application that -> epoch time when we run that application it will take same high time ; bz each time we start from start ; loading, chunking , embedding etc ;; idealy that part should not be ron again loading, chunking and embedding after it is done to make vectorstore
+
+* this latency problem i have solved in -> **3_rag_v4.py**
+* so for that we check vector-store if it has index then we will use exsisting index other wise creat run again and creat new
+
+* it would be our mind when it would be build and when re-use
+* It triggers the build path in exactly these cases:
+* - No cache exists yet means first-ever run
+* - PDF content changes.
+* - PDF file metadata(for e.g size) change
+* - chunking params change -> chunk size or chunk overlap.
+* - Embedding model name changes -> e.g. from "text-embedding-3-mall" to another model
+
+# on tried to use langSmith on tool base system like how its 'thought', 'action' and 'obervation' works
+
+## these all things are around langChain observability and evaluation;; now its time to do same things for **LangGraph**
+
+- like to integrate LangSmith with LangGraph

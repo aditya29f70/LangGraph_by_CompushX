@@ -35,7 +35,7 @@ emb= HuggingFaceEndpointEmbeddings(
 
 PDF_PATH= "islr.pdf"
 
-@traceable(name='load_pdf')
+@traceable(name='load_pdf', tags=['pdf', 'loader'], metadata={"loader":"PyPDFLoader"})
 def load_pdf(name:str):
     loader= PyPDFLoader(name)
     docs= loader.load()
@@ -43,7 +43,7 @@ def load_pdf(name:str):
 
 
 # 2. splitter
-@traceable(name="split_documents")
+@traceable(name="split_documents", tags=['splitter'], metadata={"splitter":"RecursiveCharacterTextSplitter"})
 def split_documents(docs, chunk_size=1000, chunk_overlap= 150):
     splitter= RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     splits= splitter.split_documents(docs)
@@ -51,7 +51,7 @@ def split_documents(docs, chunk_size=1000, chunk_overlap= 150):
 
 
 # 3) embedding+ index
-@traceable(name="build_vector_store")
+@traceable(name="build_vector_store", tags=['vector-store'], metadata={"vectorStore":"FAISS"})
 def build_vector_store(splits):
     vs= FAISS.from_documents(splits, embedding=emb)
     return vs
