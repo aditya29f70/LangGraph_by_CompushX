@@ -109,3 +109,14 @@
 ## these all things are around langChain observability and evaluation;; now its time to do same things for **LangGraph**
 
 - like to integrate LangSmith with LangGraph
+
+# LangSmith+ LangGraph (very strong combination)
+
+- Every graph execution can be logged in LangSmith as a **trace**
+- Each **node** (eg. retriever, LLM, tool call, subgraph) becomes a **run** inside the trace
+- You can visualize the **path taken**:
+- - START -> RETRIEVER -> RERANKER -> LLM ANSWER -> END
+
+- If a workflow branches (conditional/parallel/subgraph), LangSmith captures which path was executed.
+
+* eg . 5_langgraph.py "Easy evaluatork"
