@@ -82,14 +82,15 @@ async def main():
             messages: Annotated[list[BaseMessage], add_messages]
 
 
+        # in asyncronus exicution all the node in the graph would be run asyncronusly
         async def chat_handle(state:ChatBotState):
             messages= [SystemMessage(content="You are question answering chat bot, and if you don't know about anything which is asked please tell that you don't know instead of telling irrelavent response"), *state['messages']]
 
-            ai_result= model_with_tools.invoke(messages)
+            ai_result= await model_with_tools.ainvoke(messages)
 
             return {'messages': [ai_result]}
 
-
+        # it is itself asyncronus
         tool_node= ToolNode(tools)
 
         builder= StateGraph(ChatBotState)
