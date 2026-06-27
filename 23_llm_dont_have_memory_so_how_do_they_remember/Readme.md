@@ -61,4 +61,25 @@ c) Cross-thread reasoning is impossible
 1. Information that should survive and 2. It has to be **selective** ;; see **pic_2**
 
 - and these kind of memory in llm is called LTM (long term memory) bz it is mentening some important converstaion across the sessions
-  43:
+
+## Types of Long Term Memory
+
+- Three types of Long-Term Memory (LTM) in LLM Systems ; See **pic_3**
+
+## HOw does Long Term memory works?
+
+1. Creation/updates
+2. Storage
+3. Retriever
+4. Injection
+
+## The Challenges
+
+1. Deciding what is worth remembering
+2. Retrieving the right memory at the right time
+3. Orchestrating the entrie system
+
+eg: external LTM memory which tell to focus on building your system the memory part will be done by it;; it works as memory layer
+LangMem, Mem0, supermemory
+
+- Google is building an transformer arch which will have their own memory -> paper => Titans+ MiRAS : helping Ai have Long-term memory
