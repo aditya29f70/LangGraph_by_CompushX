@@ -27,3 +27,8 @@
 
 - parent graph; -> start-> generate -> translate(here we will just invoke the subGraph) -> end
 - subGraph; -> Start -> Trans -> end
+
+## please go through there are lot of good things like
+
+-> how langgraph maintain persistance across parent and subgraph
+-> how to see subgraph state etc
