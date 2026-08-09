@@ -67,3 +67,5 @@
 * after generating summary of rest messages, we **delete** them (not ignore , completly delete from state) bz there is not any sence to carrying those messages as well there summary
 
 * so first need to understand how deletion works
+
+## now try to understand how summarization works with the help of deletion
