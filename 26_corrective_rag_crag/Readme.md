@@ -1,5 +1,7 @@
 ## Why crag if rag works great
 
+paper -> https://arxiv.org/pdf/2401.15884
+
 -> in rag llm start **blindly trast** on retrieved docs, if retrieved docs are not relavent to query then we can get unrelated answer
 
 let eg vector Db is about ML docs and your query is about llm then your llm is froced to answer from unrelated retrieved docs ;; this problem is solved by crag
